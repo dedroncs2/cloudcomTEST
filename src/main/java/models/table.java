@@ -7,15 +7,25 @@ import javax.persistence.*;
 @Table (name = "test_table")
 public class table {
     @Id
+    @Column(name = "ssoid")
     private String ssoid;
+    @Column(name = "ts")
     private String ts;
+    @Column(name = "grp")
     private String grp;
+    @Column(name = "type")
     private String type;
+    @Column(name = "subtype")
     private String subtype;
+    @Column(name = "url")
     private String url;
+    @Column(name = "orgid")
     private String orgid;
+    @Column(name = "formid")
     private String formid;
+    @Column(name = "code")
     private String code;
+    @Column(name = "ymdh")
     private String ymdh;
 
 
@@ -117,11 +127,6 @@ public class table {
         return ymdh;
     }
 
-    @Override
-    public String toString() {
-        return "models.User{" +
-                "id=" + ssoid  +
-                '}';
-    }
+
 
 }

@@ -5,14 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<div>Список пользователей начавших активность на форме :</div>
+<div>Список:</div>
 <table border="1" width="100%" cellpadding="5">
-    {{#users}}
+    {{#top5}}
         <tr>
-            <th>{{ssoid}}</th>
-            <th>{{subtype}}</th>
+            <th>{{.}}</th>
         </tr>
-    {{/users}}
+    {{/top5}}
 
 
 </body>

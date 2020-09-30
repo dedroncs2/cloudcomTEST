@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 
-import javax.management.Query;
 import java.util.List;
 
 public class dao {
@@ -16,6 +15,17 @@ public class dao {
         List<table> users = (List<table>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("from table where subtype!='send'").list();
         return users;
     }
+    public List<table> findUsedForms() {
+        List<table> users = (List<table>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("from table where ts>'1499729399' order by ssoid").list();
+        return users;
+    }
+
+    public List<table> findFroms() {
+        List<table> users = (List<table>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("select t.formid, count(t.formid) as c from models.table t ").list();
+        return users;
+    }
+
+
 
     public void save(table table) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();

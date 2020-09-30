@@ -34,6 +34,14 @@ public class TableServices {
         return usersDao.findAllActive();
     }
 
+    public List<table> findUsedFroms() {
+        return usersDao.findUsedForms();
+    }
+
+    public List<table> findForms() {
+        return usersDao.findFroms();
+    }
+
 
 
 }

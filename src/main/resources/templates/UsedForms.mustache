@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<div>Список пользователей начавших активность на форме :</div>
+<div>Список пользователей и использованых ими формами за последний час:</div>
 <table border="1" width="100%" cellpadding="5">
-    {{#users}}
+    {{#UsedForms}}
         <tr>
             <th>{{ssoid}}</th>
-            <th>{{subtype}}</th>
+            <th>{{formid}}</th>
         </tr>
-    {{/users}}
+    {{/UsedForms}}
 
 
 </body>

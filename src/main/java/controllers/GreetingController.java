@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import services.TableServices;
 
 
+import java.util.List;
 import java.util.Map;
+
 
 @Controller
 public class GreetingController {
@@ -24,14 +26,29 @@ public class GreetingController {
         TableServices tableService = new TableServices();
         Iterable<table> users = tableService.findAllActive();
         model.put("users",users);
-        //for(table t: users)
-        //   if(t.getSubtype()!="send"){
-        //        users.r
-        //        model.put("users",t);
-        //    }
+
 
         return "main";
+    }
 
+    @GetMapping("/UsedForms")
+    public String UsedForms(Map<String,Object> model){
+        TableServices tableService = new TableServices();
+        Iterable<table> usedforms = tableService.findUsedFroms();
+        model.put("UsedForms",usedforms);
+        return "UsedForms";
+    }
+
+    @GetMapping("/top5")
+    public String top5(Map<String,Object> model){
+        TableServices tableService = new TableServices();
+        Iterable<table> top = tableService.findForms();
+        System.out.println(((List<table>) top).get(0));
+
+        model.put("top5",top);
+
+
+        return "top5";
     }
 
 
