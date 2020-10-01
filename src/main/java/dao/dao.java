@@ -21,7 +21,7 @@ public class dao {
     }
 
     public List<Object[]> findFroms() {
-        List<Object[]> users =  (List<Object[]>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select  formid, count(formid) as c from test_table group by formid order by c desc").list();
+        List<Object[]> users =  (List<Object[]>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select  formid, count(formid) as c from test_table group by formid order by c desc limit 5").list();
         return users;
     }
 
