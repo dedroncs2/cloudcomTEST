@@ -7,25 +7,15 @@ import javax.persistence.*;
 @Table (name = "test_table")
 public class table {
     @Id
-    @Column(name = "ssoid")
     private String ssoid;
-    @Column(name = "ts")
     private String ts;
-    @Column(name = "grp")
     private String grp;
-    @Column(name = "type")
     private String type;
-    @Column(name = "subtype")
     private String subtype;
-    @Column(name = "url")
     private String url;
-    @Column(name = "orgid")
     private String orgid;
-    @Column(name = "formid")
     private String formid;
-    @Column(name = "code")
     private String code;
-    @Column(name = "ymdh")
     private String ymdh;
 
 
@@ -47,83 +37,83 @@ public class table {
 
     }
 
-    public String getSsoid() {
+    public String getssoid() {
         return ssoid;
     }
 
-    public void setSsoid(String ssoid) {
+    public void setssoid(String ssoid) {
         this.ssoid = ssoid;
     }
 
-    public void setTs(String ts) {
+    public void setts(String ts) {
         this.ts = ts;
     }
 
-    public void setGrp(String grp) {
+    public void setgrp(String grp) {
         this.grp = grp;
     }
 
-    public void setType(String type) {
+    public void settype(String type) {
         this.type = type;
     }
 
-    public void setSubtype(String subtype) {
+    public void setsubtype(String subtype) {
         this.subtype = subtype;
     }
 
-    public void setUrl(String url) {
+    public void seturl(String url) {
         this.url = url;
     }
 
-    public void setOrgid(String orgid) {
+    public void setorgid(String orgid) {
         this.orgid = orgid;
     }
 
-    public void setFormid(String formid) {
+    public void setformid(String formid) {
         this.formid = formid;
     }
 
-    public void setCode(String code) {
+    public void setcode(String code) {
         this.code = code;
     }
 
-    public void setYmdh(String ymdh) {
+    public void setymdh(String ymdh) {
         this.ymdh = ymdh;
     }
 
-    public String getTs() {
+    public String getts() {
         return ts;
     }
 
-    public String getGrp() {
+    public String getgrp() {
         return grp;
     }
 
-    public String getType() {
+    public String gettype() {
         return type;
     }
 
-    public String getSubtype() {
+    public String getsubtype() {
         return subtype;
     }
 
-    public String getUrl() {
+    public String geturl() {
         return url;
     }
 
-    public String getOrgid() {
+    public String getorgid() {
         return orgid;
     }
 
-    public String getFormid() {
+    public String getformid() {
         return formid;
     }
 
-    public String getCode() {
+    public String getcode() {
         return code;
     }
 
-    public String getYmdh() {
+    public String getymdh() {
         return ymdh;
     }
 

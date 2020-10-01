@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import services.TableServices;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -42,10 +43,22 @@ public class GreetingController {
     @GetMapping("/top5")
     public String top5(Map<String,Object> model){
         TableServices tableService = new TableServices();
-        Iterable<table> top = tableService.findForms();
-        System.out.println(((List<table>) top).get(0));
+        List<Object[]> top = tableService.findForms();
+        System.out.println(top.get(0)[0].toString()+" "+top.get(0)[1].toString());
+        List<String> top5 = new ArrayList<>();
+        int i=0;
+        for(Object[] obj:top)
+        {
+            top5.add("форма:"+obj[0].toString()+"; колличество использований: "+obj[1].toString());
+            if(i==4)
+            {
+                break;
+            }
+            i++;
+        }
 
-        model.put("top5",top);
+
+        model.put("top5",top5);
 
 
         return "top5";

@@ -38,7 +38,7 @@ public class TableServices {
         return usersDao.findUsedForms();
     }
 
-    public List<table> findForms() {
+    public List<Object[]> findForms() {
         return usersDao.findFroms();
     }
 

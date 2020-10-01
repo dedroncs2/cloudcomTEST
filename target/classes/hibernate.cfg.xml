@@ -15,5 +15,7 @@
         <property name="hibernate.connection.password">asd</property>
         <property name="show_sql">true</property>
 
+        <mapping class="models.table" />
+
     </session-factory>
 </hibernate-configuration>

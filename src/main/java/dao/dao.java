@@ -20,8 +20,8 @@ public class dao {
         return users;
     }
 
-    public List<table> findFroms() {
-        List<table> users = (List<table>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("select t.formid, count(t.formid) as c from models.table t ").list();
+    public List<Object[]> findFroms() {
+        List<Object[]> users =  (List<Object[]>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createNativeQuery("select  formid, count(formid) as c from test_table group by formid order by c desc").list();
         return users;
     }
 
@@ -52,7 +52,7 @@ public class dao {
     }
 
     public List<table> findAll() {
-        List<table> users = (List<table>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From table").list();
+        List<table> users = (List<table>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("from models.table").list();
         return users;
     }
 }
